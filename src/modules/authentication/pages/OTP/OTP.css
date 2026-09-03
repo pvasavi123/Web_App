@@ -1,0 +1,11 @@
+.otp-page { display: flex; flex-direction: column; gap: var(--space-5); }
+.otp-page__header { display: flex; flex-direction: column; gap: var(--space-1); text-align: center; }
+.otp-page__title { margin: 0; }
+.otp-page__subtitle { color: var(--color-text-muted); }
+
+.otp-page__resend {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+}
+
+.otp-page__resend:disabled { color: var(--color-text-muted); cursor: default; }

@@ -1,0 +1,47 @@
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { routePaths } from '@core/config'
+import { useAuthStore } from '@store/index'
+import type { AuthSession } from '@core/auth'
+
+import { authFlowService } from '../services/authFlowService'
+import type { LoginPayload, VerifyOtpPayload } from '../types/auth.types'
+
+/** The authentication module's public surface for pages. */
+export const useAuth = () => {
+  const navigate = useNavigate()
+  const { user, isAuthenticated, signIn, signOut, setUser } = useAuthStore()
+
+  const completeSignIn = useCallback(
+    (session: AuthSession) => {
+      signIn(session)
+      navigate(session.user.isProfileComplete ? routePaths.dashboard : routePaths.auth.createProfile, {
+        replace: true,
+      })
+    },
+    [signIn, navigate],
+  )
+
+  const login = useCallback(
+    async (payload: LoginPayload) => {
+      completeSignIn(await authFlowService.login(payload))
+    },
+    [completeSignIn],
+  )
+
+  const verifyOtp = useCallback(
+    async (payload: VerifyOtpPayload) => {
+      completeSignIn(await authFlowService.verifyOtp(payload))
+    },
+    [completeSignIn],
+  )
+
+  const logout = useCallback(async () => {
+    await authFlowService.logout()
+    signOut()
+    navigate(routePaths.auth.login, { replace: true })
+  }, [signOut, navigate])
+
+  return { user, isAuthenticated, login, verifyOtp, logout, setUser }
+}

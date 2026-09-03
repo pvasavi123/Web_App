@@ -1,0 +1,29 @@
+.gst-dashboard { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.gst-dashboard__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.gst-dashboard__title { margin: 0; }
+.gst-dashboard__subtitle { margin-top: var(--space-1); color: var(--color-text-muted); }
+.gst-dashboard__actions { display: flex; gap: var(--space-3); }
+
+.gst-dashboard__filters {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: var(--space-3);
+}
+
+.gst-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+@media (width <= 720px) {
+  .gst-dashboard__filters { grid-template-columns: 1fr; }
+}

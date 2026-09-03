@@ -1,0 +1,6 @@
+export { LoginForm } from './LoginForm/LoginForm'
+export type { LoginFormProps } from './LoginForm/LoginForm'
+export { RegisterForm } from './RegisterForm/RegisterForm'
+export type { RegisterFormProps } from './RegisterForm/RegisterForm'
+export { OTPInput } from './OTPInput/OTPInput'
+export type { OTPInputProps } from './OTPInput/OTPInput'

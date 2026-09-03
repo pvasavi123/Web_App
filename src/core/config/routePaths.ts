@@ -1,0 +1,28 @@
+/** Single source of truth for URLs. Never hard-code a path in a component. */
+export const routePaths = {
+  root: '/',
+  auth: {
+    login: '/auth/login',
+    register: '/auth/register',
+    otp: '/auth/otp',
+    passcode: '/auth/passcode',
+    createProfile: '/auth/create-profile',
+  },
+  dashboard: '/dashboard',
+  gst: {
+    root: '/gst',
+    registration: '/gst/registration',
+    returns: '/gst/returns',
+    detail: (id = ':id') => `/gst/${id}`,
+  },
+  itr: '/itr',
+  loans: '/loans',
+  insurance: '/insurance',
+  payments: '/payments',
+  documents: '/documents',
+  applications: '/applications',
+  profile: '/profile',
+  chat: '/chat',
+  support: '/support',
+  notFound: '*',
+} as const
