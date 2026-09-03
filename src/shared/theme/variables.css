@@ -15,12 +15,15 @@
   --color-text-muted: var(--grey-500);
   --color-text-inverse: var(--grey-0);
 
-  --color-primary: var(--teal-500);
-  --color-primary-hover: var(--teal-600);
-  --color-primary-soft: var(--teal-50);
+  --color-primary: var(--orange-500);
+  --color-primary-hover: var(--orange-600);
+  --color-primary-soft: var(--orange-50);
   --color-on-primary: var(--grey-0);
 
   --color-accent: var(--navy-500);
+  --color-accent-hover: var(--navy-600);
+  --color-accent-soft: var(--navy-50);
+  --color-on-accent: var(--grey-0);
 
   --color-success: var(--green-500);
   --color-success-soft: var(--green-100);
@@ -77,8 +80,12 @@
   --color-text-muted: var(--grey-300);
   --color-text-inverse: var(--grey-900);
 
-  --color-primary: var(--teal-300);
-  --color-primary-hover: var(--teal-100);
-  --color-primary-soft: rgb(31 138 122 / 18%);
+  --color-primary: var(--orange-300);
+  --color-primary-hover: var(--orange-100);
+  --color-primary-soft: rgb(249 115 22 / 18%);
   --color-on-primary: var(--navy-700);
+
+  --color-accent: var(--navy-400);
+  --color-accent-hover: var(--navy-500);
+  --color-on-accent: var(--grey-0);
 }

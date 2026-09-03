@@ -10,7 +10,6 @@ export interface DataTableColumn<T> {
   header: string
   render: (row: T) => ReactNode
   align?: 'left' | 'right'
-  width?: string
 }
 
 export interface DataTableProps<T> {
@@ -39,12 +38,7 @@ export const DataTable = <T,>({
         <thead>
           <tr>
             {columns.map((column) => (
-              <th
-                key={column.key}
-                scope="col"
-                style={column.width ? { width: column.width } : undefined}
-                className={column.align === 'right' ? 'is-right' : undefined}
-              >
+              <th key={column.key} scope="col" className={column.align === 'right' ? 'is-right' : undefined}>
                 {column.header}
               </th>
             ))}
