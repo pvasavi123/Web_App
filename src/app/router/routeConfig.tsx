@@ -3,8 +3,10 @@ import type { RouteObject } from 'react-router-dom'
 
 import { AuthLayout } from '../layouts/AuthLayout'
 import { DashboardLayout } from '../layouts/DashboardLayout'
+import { StaffLayout } from '../layouts/StaffLayout'
 import { NotFound } from '../pages/NotFound'
 
+import { routePaths } from '@core/config'
 import { applicationsRoutes } from '@modules/applications'
 import { authenticationRoutes } from '@modules/authentication'
 import { chatRoutes } from '@modules/chat'
@@ -16,11 +18,12 @@ import { itrRoutes } from '@modules/itr'
 import { loansRoutes } from '@modules/loans'
 import { paymentsRoutes } from '@modules/payments'
 import { profileRoutes } from '@modules/profile'
+import { staffRoutes } from '@modules/staff'
 import { supportRoutes } from '@modules/support'
 
-import { ProtectedRoute } from './ProtectedRoute'
+import { CustomerRoute } from './CustomerRoute'
 import { PublicRoute } from './PublicRoute'
-import { routePaths } from '@core/config'
+import { StaffRoute } from './StaffRoute'
 
 /**
  * Modules own their own routes and export them from their barrel;
@@ -29,15 +32,14 @@ import { routePaths } from '@core/config'
 export const routeConfig: RouteObject[] = [
   {
     element: <PublicRoute />,
-    children: [
-      {
-        element: <AuthLayout />,
-        children: authenticationRoutes,
-      },
-    ],
+    children: [{ element: <AuthLayout />, children: authenticationRoutes }],
   },
   {
-    element: <ProtectedRoute />,
+    element: <StaffRoute />,
+    children: [{ element: <StaffLayout />, children: staffRoutes }],
+  },
+  {
+    element: <CustomerRoute />,
     children: [
       {
         element: <DashboardLayout />,

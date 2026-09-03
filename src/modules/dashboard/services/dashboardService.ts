@@ -12,10 +12,10 @@ const mockSummary: DashboardSummary = {
     { id: 'documents', label: 'Documents stored', value: '37' },
   ],
   recentActivity: [
-    { id: 'a1', title: 'GSTR-3B — August', module: 'GST', status: 'in_review', updatedAt: new Date().toISOString() },
-    { id: 'a2', title: 'ITR-4 filing FY 2025-26', module: 'Income tax', status: 'action_required', updatedAt: new Date(Date.now() - 864e5).toISOString() },
-    { id: 'a3', title: 'Business loan — HDFC', module: 'Loans', status: 'submitted', updatedAt: new Date(Date.now() - 3 * 864e5).toISOString() },
-    { id: 'a4', title: 'GST registration — Telangana', module: 'GST', status: 'approved', updatedAt: new Date(Date.now() - 9 * 864e5).toISOString() },
+    { id: 'a1', title: 'GSTR-3B — August', module: 'GST', status: 'MANAGER_REVIEW', updatedAt: new Date().toISOString() },
+    { id: 'a2', title: 'ITR-4 filing FY 2025-26', module: 'Income tax', status: 'QUERY_RAISED', updatedAt: new Date(Date.now() - 864e5).toISOString() },
+    { id: 'a3', title: 'Business loan — HDFC', module: 'Loans', status: 'SUBMITTED', updatedAt: new Date(Date.now() - 3 * 864e5).toISOString() },
+    { id: 'a4', title: 'GST registration — Telangana', module: 'GST', status: 'COMPLETED', updatedAt: new Date(Date.now() - 9 * 864e5).toISOString() },
   ],
   upcomingDeadlines: [
     { id: 'd1', label: 'GSTR-1 for September', dueOn: '2026-10-11' },
